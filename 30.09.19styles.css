@@ -414,10 +414,6 @@ footer::before{
 		transition: initial;
 	}
 
-	.nav-list li{
-		line-height: 8rem;
-	}
-
 	.menu-icons{
 		display: none;
 	}
@@ -426,7 +422,8 @@ footer::before{
 		margin: 0 2.5rem;
 	}
 
-	.nav-link{
+	.nav-link, 
+	.current{
 		color: #fafafa;
 		position: relative;
 		font-size: 1.3rem;
