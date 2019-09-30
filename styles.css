@@ -140,11 +140,11 @@ nav{
 	text-transform: uppercase;
 	text-align: right;
 	position: absolute;
-	top: 50%;
+	top: 45%;
 	right: 10%;
 }
 
-.main-message h3{
+.main-message span{
 	font-size: 1.4rem;
 }
 
@@ -176,8 +176,8 @@ nav{
 }
 /*End landing-page*/
 
-/*Start experience the outdoors*/
-.experience-outdoors{
+/*Start o praktyce*/
+.o-praktyce{
 	padding: 0;
 }
 
@@ -228,29 +228,39 @@ nav{
 }
 .start{
 	transform: scaleY(-1) rotate(180deg);
-	
 }
+/*End o praktyce*/
 
-.activites-grid{
+/*start gabinet*/
+.gabinet-grid{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
 	grid-gap: 2.5rem;
 	margin-bottom: 5rem;
+	justify-content: center;
+	
 }
 
-.activites-grid-item{
+.gabinet-grid-item{
 	height: 40rem;
-	padding: 5rem;
+	padding: 5rem 9rem;
 	color: #fafafa;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	cursor: pointer;
+	text-align: left;
 	z-index: 1;
 }
 
-.activites-grid-item::before{
+.stargard-img:hover,
+.szczecin-img:hover{
+	opacity: 0.9;
+	transition: 650ms;
+}
+
+.gabinet-grid-item::before{
 	content: "";
 	position: absolute;
 	top: 0;
@@ -261,33 +271,33 @@ nav{
 	z-index: -1;
 }
 
-.star-gazing{
+.stargard-img{
 	background: url("images/sample4.jpg") center no-repeat;
 }
 
-.hiking{
+.szczecin-img{
 	background: url("images/sample3.jpg") center no-repeat;
 }
 
 
-.activites-grid-item i{
+.gabinet-grid-item i{
 	font-size: 4rem;
 	color: #eb648c;
 }
 
-.activites-grid-item h1{
+.gabinet-grid-item h1{
 	font-family: 'Aldrich', sans-serif;
 	font-size: 1.7rem;
 	text-transform: uppercase;
 	margin: 2rem 0;
 }
+/*End gabinet*/
 
-/*End experience the outdoors*/
 
 /*Start testimonials*/
 footer{
 	width: 100%;
-	height: 30vh;
+	height: 84vh;
 	background:linear-gradient(135deg, rgba(18, 10, 143,0.8) 0%, rgba(12,40,120,0.9) 100%);
 	background-size: cover;
 	position: relative;
@@ -303,18 +313,67 @@ footer::before{
 	background: url("images/wave-small-reversed.png") center no-repeat;
 	background-size: cover;
 }
-
-.footer-item{
+/*start footer queries big*/
+.footer-grid{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin: 5rem 0 6rem 0;
 	width: 100%;
 	color: #fafafa;
-	position: absolute;
-	top: 55%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(10rem,30rem));
+	column-count: 3;
+	justify-content: center;
+	
 }
 
-/*End testimonials*/
+.footer-grid-item{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	padding: 1rem;
+	justify-content: center;
+}
+
+.footer-grid-item img{
+	height: 4rem;
+}
+
+.footer-grid div>h3{
+	width: 100%;
+	max-width: 50rem;
+	color: #fafafa;
+	text-transform: uppercase;
+	font-family: "Aldrich", sans-serif;
+	font-size: 2.8rem;
+}
+
+.footer-grid div>h3>span{
+	font-size: 1.2rem;
+}
+
+.footer-grid-item i{
+	font-size: 2rem;
+	color: #eb648c;
+}
+
+/*end footer queries big*/
+.footer-text{
+	background-color: #cccccc;
+	height: 4rem;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.footer-text p{
+	font-size: 1.2rem;
+	margin: 1rem 0;
+	text-align: center;
+}
+/*End footer*/
 
 
 /*Start Media quaries*/
@@ -421,6 +480,54 @@ footer::before{
 		background:url(images/wave-large-reversed.png);
 		background-size: cover;
 	}
+
+	/*start footer queries big CoŚ USuŃ*/
+	footer{
+		height: 50vh;
+	}
+	.footer-grid{
+		bottom: 0;
+		left: 5rem;
+		margin: 3.5rem 5rem;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(20rem,31rem));
+		column-count: 4;
+		grid-gap: 2rem;
+		
+	}
+
+	.footer-grid-item{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		padding: 1rem;
+		justify-content: center;
+	}
+
+	.footer-grid-item img{
+		height: 4rem;
+	}
+
+	.footer-grid div>h3{
+		width: 100%;
+		max-width: 50rem;
+		color: #fafafa;
+		text-transform: uppercase;
+		font-family: "Aldrich", sans-serif;
+		font-size: 2.8rem;
+	}
+
+	.footer-grid div>h3>span{
+		font-size: 1.2rem;
+	}
+
+	.footer-grid-item i{
+		font-size: 2rem;
+	}
+
+/*end footer queries big*/
 }
 
 @media screen and (min-width:1200px){
@@ -428,3 +535,17 @@ footer::before{
 			height: 100vh;
 		}
 }
+/*rozwiązuje problem białego paska po prawej na mobilkach*/
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5){
+	html,
+  body{
+    width:100%;
+    overflow-x:hidden;
+  }
+
+}
+/*rozwiązuje problem białego paska po prawej na mobilkach*/
