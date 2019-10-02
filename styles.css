@@ -66,7 +66,7 @@ nav{
 }
 
 .nav-brand a img{
-	width: 3.2rem;
+	width: 3.8rem;
 }
 
 .menu-icons i{
@@ -88,7 +88,8 @@ nav{
 	right: -26rem;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	text-align: left;
+	padding-left: 4rem;
 	justify-content: center;
 	z-index: 1500;
 	transition: all 650ms ease-in-out;
@@ -99,21 +100,19 @@ nav{
 	height: 20rem;
 	display: block;
 	z-index: 100;
+	visibility: visible;
 	opacity: 1;
-	visibility:visible;
 	position: relative;
+	margin-bottom: -8rem;
+	margin-top: 2rem;
+	color: rgb(255,255,255);
 }
-
-
-
 
 .sub-menu li{
 	font-size: 1.1rem;
-	height: 2rem;
-	text-transform: uppercase;
-	color: rgb(255,255,255);
-	padding-left: 1rem;
-
+	height: 3rem;
+	padding-left: 0.8rem;
+	font-weight: lighter;
 }
 
 .nav-list.active{
@@ -132,21 +131,47 @@ nav{
 	position: relative;
 }
 
-.flex{
-	justify-content: space-between;
-}
 
 .nav-link{
 	font-size: 1.4rem;
 	text-transform: uppercase;
 	color: rgba(0,0,0,0.7); 
+	font-weight: bolder;
 }
+
+.nav-link:focus,
+.sub-menu-link:focus{
+		color: rgba(12,40,120);
+		border-bottom:1px solid rgba(255,255,255,1);
+	}
+
+.nav-link:active{
+		font-size: 1.45rem;
+} 
+
+.sub-menu-link:active{
+		font-size: 105%;
+} 
+
+.nav-link:hover,
+.sub-menu-link:hover{
+		color: #eb648c;
+		transition: transform 200ms;
+}
+
+.sub-menu-link{
+	text-decoration:none;
+	text-transform: uppercase;
+	color: rgba(0,0,0,0.7);
+}
+
+
 /*End header */
 
 /*Start landing-page*/
 .landing-page{
 	width: 100%;
-	height: 100vh;
+	height: 99vh;
 	background:linear-gradient(135deg, rgba(18, 10, 143,0.8) 0%, rgba(12,40,120,0.9) 100%), url(images/main2.jpg) left no-repeat;
 	position: relative;
 	background-size: cover;
@@ -286,7 +311,7 @@ nav{
 .stargard-img:hover,
 .szczecin-img:hover{
 	opacity: 0.9;
-	transition: 650ms;
+	transition: opacity 650ms;
 }
 
 .gabinet-grid-item::before{
@@ -408,7 +433,7 @@ footer::before{
 /*Start Media quaries*/
 @media screen and (min-width: 350px){
 	.main-message{
-		transform: translateY(40%);
+		transform: translateY(15vh);
 	}
 }
 
@@ -422,6 +447,9 @@ footer::before{
 		height: 9.4rem;
 		background:url(images/wave-medium-reversed.png);
 		background-size: cover;
+	}
+	.main-message{
+		transform: translateY();
 	}
 }
 
@@ -452,8 +480,8 @@ footer::before{
 	position: absolute;
 	}
 
-	.nav-brand{
-		width: 3.5rem;
+	.nav-brand a img{
+		width: 4.2rem;
 	}
 
 	.nav-list{
@@ -465,6 +493,8 @@ footer::before{
 		right: initial;
 		flex-direction: row;
 		transition: initial;
+		align-items: center;
+		padding-left: 0;
 	}
 
 	.nav-list li{
@@ -483,6 +513,12 @@ footer::before{
 		color: #fafafa;
 		position: relative;
 		font-size: 1.2rem;
+	}
+
+
+	.nav-link i{
+		visibility: hidden;
+		opacity: 0;
 	}
 
 	.sub-menu-link{
@@ -506,6 +542,26 @@ footer::before{
 		transition: transform 650ms;
 	}
 
+	.nav-link:focus,
+	.sub-menu-link:focus{
+		color: rgba(250,250,250,0.4);
+		border-color: transparent;
+	}
+
+	.nav-link:active{
+		font-size: 1.45rem;
+	} 
+
+	.sub-menu-link:active{
+		font-size: 105%;
+	} 
+
+	.nav-link:hover,
+	.sub-menu-link:hover{
+		color: rgba(250,250,250,0.9);
+		transition: transform 200ms;
+	}
+
 
 	.nav-link:hover::before,
 	.sub-menu-link:hover::before{
@@ -513,7 +569,7 @@ footer::before{
 	}
 
 	.landing-page{
-		height: 60vh;
+		height: 95vh;
 	}
 
 	.main-message{
@@ -542,7 +598,7 @@ footer::before{
 		}
 
 		.landing-page{
-			height: 80vh;
+			height: 99vh;
 		}
 
 		.landing-page::before{
