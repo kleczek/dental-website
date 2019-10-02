@@ -56,15 +56,17 @@ header{
 
 nav{
 	width: 100%;
+	height: 5.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 1rem 0;
 	border-bottom:1px solid rgba(255,255,255,0.2);
+	margin-top: 1rem;
 }
 
 .nav-brand a img{
-	width: 3.5rem;
+	width: 3.2rem;
 }
 
 .menu-icons i{
@@ -92,6 +94,28 @@ nav{
 	transition: all 650ms ease-in-out;
 }
 
+.sub-menu{
+	width: 13rem;
+	height: 20rem;
+	display: block;
+	z-index: 100;
+	opacity: 1;
+	visibility:visible;
+	position: relative;
+}
+
+
+
+
+.sub-menu li{
+	font-size: 1.1rem;
+	height: 2rem;
+	text-transform: uppercase;
+	color: rgb(255,255,255);
+	padding-left: 1rem;
+
+}
+
 .nav-list.active{
 	right: 0;
 }
@@ -103,13 +127,19 @@ nav{
 }
 
 .nav-item{
-	margin: 1.5rem 0;
+	margin:1rem 0;
+	justify-content: center;
+	position: relative;
+}
+
+.flex{
+	justify-content: space-between;
 }
 
 .nav-link{
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	text-transform: uppercase;
-	color: rgba(0,0,0,0.7);
+	color: rgba(0,0,0,0.7); 
 }
 /*End header */
 
@@ -293,7 +323,7 @@ nav{
 /*End gabinet*/
 
 
-/*Start testimonials*/
+/*Start footer*/
 footer{
 	width: 100%;
 	height: 84vh;
@@ -394,9 +424,32 @@ footer::before{
 		background-size: cover;
 	}
 }
+
 @media screen and (min-width: 700px){
 	header{
 		height: 8rem;
+	}
+
+	.sub-menu li{
+	height: 4rem;
+	}
+
+	.sub-menu{
+	margin-top: -10rem;
+	width: 12rem;
+	background-color: rgba(255,255,255,0.2);
+	display: block;
+	position: absolute;
+	z-index: 100;
+	top:16rem;
+	opacity: 0;
+	visibility:hidden;
+	}
+
+	.nav-item:hover > .sub-menu{
+	visibility: visible;
+	opacity: 1;
+	position: absolute;
 	}
 
 	.nav-brand{
@@ -423,17 +476,24 @@ footer::before{
 	}
 
 	.nav-item{
-		margin: 0 2.5rem;
+		margin: 0 1.5rem;
 	}
 
 	.nav-link{
 		color: #fafafa;
 		position: relative;
-		font-size: 1.3rem;
+		font-size: 1.2rem;
 	}
 
+	.sub-menu-link{
+		color: rgba(255,255,255,0.9);
+		position: relative;
+		font-size: 1rem;
+	}
+
+
 	.nav-link::before,
-	.current::before{
+	.sub-menu-link::before{
 		content:"";
 		position: absolute;
 		left: 0;
@@ -446,11 +506,9 @@ footer::before{
 		transition: transform 650ms;
 	}
 
-	.current::before{
-		transform: scaleX(1);
-	}
 
-	.nav-link:hover::before{
+	.nav-link:hover::before,
+	.sub-menu-link:hover::before{
 		transform: scaleX(1);
 	}
 
@@ -465,9 +523,24 @@ footer::before{
 	.title-heading h1{
 		font-size: 2.5rem;
 	}
+
 }
 
 @media screen and (min-width:950px){
+		.sub-menu{
+			width: 14rem;
+			height: 20.2rem;
+			background-color: rgba(255,255,255,0.15);
+		}
+
+		.nav-link{
+			font-size: 1.4rem;
+		}
+
+		.sub-menu-link{
+			font-size: 1.2rem;
+		}
+
 		.landing-page{
 			height: 80vh;
 		}
