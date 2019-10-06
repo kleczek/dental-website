@@ -277,9 +277,37 @@ nav{
 	color: #eb648c;
 	opacity: 0.4;
 }
-
-
 /*End rejestracja*/
+
+/*Start address*/
+.address-hours-grid{
+	height: 50rem;
+	padding: 5rem 9rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(35rem,1fr));
+	grid-gap: 1rem;
+	justify-content: center;
+	background: linear-gradient(135deg, rgba(18, 10, 143,0.8) 0%, rgba(12,40,120,0.9) 100%), url("images/sample4.jpg") center no-repeat;
+	background-size: cover;
+}
+.address-hours-grid-item{
+	color: #fafafa;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: top;
+	text-align: left;
+	z-index: 1;
+}
+
+.map{
+	width:40rem; 
+	height:40rem; 
+	margin: 0 auto;
+	border:none;
+}
+
+/*end address*/
 
 /*start galeria*/
 .galeria-grid{
