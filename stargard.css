@@ -312,7 +312,7 @@ nav{
 /*start galeria*/
 .galeria-grid{
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(35rem,1fr));
+	grid-template-columns: repeat(auto-fit, minmax(40rem,1fr));
 	grid-gap: 2.5rem;
 	justify-content: center;
 	
@@ -334,8 +334,13 @@ nav{
 .stargard-img:hover,
 .szczecin-img:hover{
 	opacity: 0.9;
-	transition: opacity 650ms;
+	transform: scale(1.02);
 }
+
+.galeria-grid-item:hover::before{
+	background: none;
+	transition: 1s;
+	}
 
 .galeria-grid-item::before{
 	content: "";
@@ -346,14 +351,17 @@ nav{
 	height: 100%;
 	background: linear-gradient(135deg, rgba(18, 10, 143,0.8) 0%, rgba(12,40,120,0.9) 100%);
 	z-index: -1;
+	transition: 1s;
 }
 
 .stargard-img{
 	background: url("images/sample4.jpg") center no-repeat;
+	transition: 650ms;
 }
 
 .szczecin-img{
 	background: url("images/sample3.jpg") center no-repeat;
+	transition: 650ms;
 }
 
 
